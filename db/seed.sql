@@ -15,7 +15,7 @@ CREATE TABLE items (
   name VARCHAR(100),
   description VARCHAR(1000),
   image VARCHAR(2000),
-  limit int,
+  lim int,
   user_id int REFERENCES users(user_id)
 );
 
@@ -33,7 +33,7 @@ CREATE TABLE item_cart_junction (
 );
 
 INSERT INTO items
-(name, description, image, limit)
+(name, description, image, lim)
 VALUES
 ('book', 'it is a book', 'book.png', 10),
 ('game', 'it is a game', 'game.png', 20),

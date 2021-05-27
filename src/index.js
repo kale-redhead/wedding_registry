@@ -10,7 +10,7 @@ import registry from "./redux/registry"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider registry={registry}>
+    <Provider store={registry}>
       <HashRouter>
         <App/>
       </HashRouter>
