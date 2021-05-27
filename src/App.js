@@ -17,9 +17,9 @@ function App() {
       dispatch(setCart(res.data.cart))
     })
     .catch((err) => {
-      console.log(err.response) 
+      console.log(err.response)
     })
-  }, [])
+  })
 
   return (
     <div className="App">

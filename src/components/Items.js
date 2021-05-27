@@ -1,11 +1,12 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
+import {setCart} from '../redux/cartReducer'
 
 const Items = (props) => {
     const [items, setItems] = useState([])
-    const {user} = useSelector((registry) => registry.auth)
-    const {cart} = useSelector((registry) => registry.cartReducer)
+    const {user} = useSelector((store) => store.auth)
+    const {cart} = useSelector((store) => store.cartReducer)
     const dispatch = useDispatch()
 
     useEffect(() => {
