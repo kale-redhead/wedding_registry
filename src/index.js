@@ -4,9 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { Provider } from "react-redux"
+import { HashRouter } from "react-router-dom"
+import registry from "./redux/registry"
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider registry={registry}>
+      <HashRouter>
+        <App/>
+      </HashRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
