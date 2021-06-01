@@ -74,5 +74,10 @@ module_exports = {
             console.log(err)
             res.status(500).send(err)
         })
+    },
+
+    getAllItems: async (req, res) => {
+        const allItems = await req.app.get('db').get_all_items();
+        return res.status(200).send(allItems)
     }
 }
