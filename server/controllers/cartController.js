@@ -1,4 +1,4 @@
-module_exports = {
+module.exports = {
     getCart: (req,res) => {
         const db = req.app.get('db')
         const {user} = req.session

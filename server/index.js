@@ -8,12 +8,12 @@ const cartCtrl = require('./controllers/cartController')
 const auth = require('./middleware/authMiddleware')
 
 const app = express()
-const {connection_string, session_secret, server_port} = process.env
+const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT} = process.env
 
 //TOP LEVEL MIDDLEWARE
 app.use(express.json())
 app.use(session({
-    secret: session_secret,
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {maxAge: 1000 *60 *60 *24} 
@@ -21,7 +21,7 @@ app.use(session({
 
 //DATABASE CONNECTION
 massive({
-    connectionString: connection_string,
+    connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}
 })
     .then((db) => {
@@ -51,4 +51,4 @@ app.get('/api/cart/all', auth.usersOnly, auth.adminsOnly, cartCtrl.getAllItems);
 
 
 
-app.listen(server_port, () => console.log(`app is listening on port ${server_port}`))
+app.listen(SERVER_PORT, () => console.log(`app is listening on port ${SERVER_PORT}`))
