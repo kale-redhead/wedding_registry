@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <Link to='/'>Dashboard</Link>
       <Link to='/auth'>Auth</Link>
-      <Link to='/items'>Items</Link>
+      <Link to='/items'>Registry</Link>
       <Link to='/cart'>Cart</Link>
     </header>
   )

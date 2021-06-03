@@ -48,7 +48,7 @@ const Items = (props) => {
     }
     return(
         <div>
-            <h1>Items Page</h1>
+            <h1>Registry</h1>
             {items.map((item) => {
                 return(
                     <div key={item.item_id}>
