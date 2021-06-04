@@ -3,6 +3,7 @@ import axios from 'axios'
 import {setUser} from '../redux/authReducer'
 import {setCart} from '../redux/cartReducer'
 import {useDispatch} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
 const Auth = (props) => {
     const [email, setEmail] = useState('')
@@ -37,7 +38,6 @@ const Auth = (props) => {
 
     return(
         <div>
-            <h1>Auth Page</h1>
             <input value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={handleLogin}>Login</button>
@@ -46,4 +46,4 @@ const Auth = (props) => {
     )
 }
 
-export default Auth
+export default withRouter(Auth)

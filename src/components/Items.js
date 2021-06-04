@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
+import Cart from './Cart'
 
 const Items = (props) => {
     const [items, setItems] = useState([])
@@ -46,6 +47,8 @@ const Items = (props) => {
             })
         }
     }
+
+
     return(
         <div>
             <h1>Registry</h1>
@@ -60,6 +63,7 @@ const Items = (props) => {
                     </div>
                 )
             })}
+            <Cart/>
         </div>
     )
 }

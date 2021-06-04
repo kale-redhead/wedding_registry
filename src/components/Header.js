@@ -1,12 +1,16 @@
 import {Link} from 'react-router-dom'
+import Auth from './Auth'
+import './Header.css'
 
 const Header = () => {
   return(
     <header>
-      <Link to='/'>Dashboard</Link>
-      <Link to='/auth'>Auth</Link>
-      <Link to='/items'>Registry</Link>
-      <Link to='/cart'>Cart</Link>
+      <div className='Header'>
+        <div className='title'>Trevor and Kaley's Registry</div>
+        <Auth/>
+        {/* <Link to='/'>Home Page</Link>
+        <Link to='/items'>Registry</Link> */}
+      </div>
     </header>
   )
 }
