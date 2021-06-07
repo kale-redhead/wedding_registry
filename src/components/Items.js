@@ -3,6 +3,7 @@ import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
 import Cart from './Cart'
+import './Registry.css'
 
 const Items = (props) => {
     const [items, setItems] = useState([])
@@ -50,11 +51,11 @@ const Items = (props) => {
 
 
     return(
-        <div>
+        <div className='container'>
             <h1>Registry</h1>
             {items.map((item) => {
                 return(
-                    <div key={item.item_id}>
+                    <div className='item' key={item.item_id}>
                         <h4>{item.item_name}</h4>
                         <p>{item.item_description}</p>
                         {user && 

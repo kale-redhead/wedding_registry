@@ -10,5 +10,6 @@
 .title {
     font-size: 55px;
     font-family: 'abiggail';
-    color: whitesmoke;
+    color: rgb(233, 227, 214);
+    text-shadow: 1px 1px rgba(0,0,0,0.7);
 }
