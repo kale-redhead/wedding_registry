@@ -1,4 +1,20 @@
 .container {
-    color: bisque;
+    background-color: indigo;
 
+}
+
+.item {
+    background-color: lawngreen;
+    height: 30px;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+}
+
+.purchase {
+    background-color: lightcoral;
+    height: 30px;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
 }

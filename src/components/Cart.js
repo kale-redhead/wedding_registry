@@ -57,7 +57,7 @@ const Cart = (props) => {
       <h1>Cart</h1>
       {cart.map((item) => {
         return(
-          <div key={item.item_cart_id}>
+          <div className='purchase' key={item.item_cart_id}>
             <h4>{item.item_name}</h4>
             <h5>Qty: {item.quantity}</h5>
             <button onClick={() => handleChangeQty(item.item_id,item.quantity - 1)}>-</button>

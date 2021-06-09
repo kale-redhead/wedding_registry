@@ -1,5 +1,7 @@
 .App {
   text-align:left;
+  background-color: rgb(233, 227, 214);
+  height: 500vh;
 }
 
 input{
