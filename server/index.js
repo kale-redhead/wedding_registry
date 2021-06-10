@@ -6,11 +6,13 @@ const authCtrl = require('./controllers/authController')
 const itemCtrl = require('./controllers/itemController')
 const cartCtrl = require('./controllers/cartController')
 const auth = require('./middleware/authMiddleware')
-const { default: Items } = require('../src/components/Items')
+// const { default: Items } = require('../src/components/Items')
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc')
 
 const app = express()
+app.use(express.static('.'))
 const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT} = process.env
+const YOUR_DOMAIN = 'http://localhost:3000/checkout';
 
 //TOP LEVEL MIDDLEWARE
 app.use(express.json())
@@ -72,6 +74,29 @@ app.post('/create-checkout-session', async (req,res) => {
     })
     res.json({id: check.id})
 })
+
+app.post('/create-checkout-session', async (req, res) => {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: items.name,
+              images: [items.image],
+            },
+            unit_amount: items.price,
+          },
+          quantity: item_cart_junction.quantity,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${YOUR_DOMAIN}?success=true`,
+      cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    });
+    res.json({ id: session.id });
+  });
 
 
 app.listen(SERVER_PORT, () => console.log(`app is listening on port ${SERVER_PORT}`))

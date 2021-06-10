@@ -3,6 +3,7 @@ import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
 import { useHistory } from 'react-router-dom'
+import '../Checkout'
 
 const Cart = (props) => {
   const {cart} = useSelector((store) => store.cartReducer)
