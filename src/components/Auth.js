@@ -4,6 +4,7 @@ import {setUser} from '../redux/authReducer'
 import {setCart} from '../redux/cartReducer'
 import {useDispatch} from 'react-redux'
 import {withRouter} from 'react-router-dom'
+import './auth.css'
 
 const Auth = (props) => {
     const [email, setEmail] = useState('')
@@ -37,8 +38,10 @@ const Auth = (props) => {
     }
 
     return(
-        <div>
+        <div className='auth'>
+            <div className='un'>Username:</div>
             <input value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <div className='pw'>Password:</div>
             <input value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={handleLogin}>Login</button>
             <button onClick={handleRegister}>Register</button>

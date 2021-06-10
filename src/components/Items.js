@@ -52,7 +52,7 @@ const Items = (props) => {
 
     return(
         <div className='container'>
-            <h1>Registry</h1>
+            <div className='registry'>Registry</div>
             {items.map((item) => {
                 return(
                     <div className='item' key={item.item_id}>

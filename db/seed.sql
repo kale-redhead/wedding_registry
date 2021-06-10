@@ -13,7 +13,7 @@ CREATE TABLE users (
 CREATE TABLE items (
   item_id SERIAL PRIMARY KEY,
   name VARCHAR(100),
-  description VARCHAR(1000),
+  price VARCHAR(1000),
   image VARCHAR(2000),
   lim int,
   user_id int REFERENCES users(user_id)

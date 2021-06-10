@@ -2,10 +2,13 @@ import {useEffect} from 'react'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
+import { useHistory } from 'react-router-dom'
 
 const Cart = (props) => {
   const {cart} = useSelector((store) => store.cartReducer)
   const dispatch = useDispatch()
+  console.log(props)
+  const{push} = useHistory()
 
   useEffect(() => {
     axios.get('/api/cart')
@@ -16,7 +19,7 @@ const Cart = (props) => {
     .catch(err => {
       console.log(err)
       if(err.response.status === 511){
-        props.history.push('/auth')
+        push('/auth')
       }
     })
   }, [dispatch])
@@ -29,7 +32,7 @@ const Cart = (props) => {
     .catch(err => {
       console.log(err)
       if(err.response.status === 511){
-        props.history.push('/auth')
+        push('/auth')
       }
     })
   }
@@ -46,7 +49,7 @@ const Cart = (props) => {
       .catch(err => {
         console.log(err)
         if(err.response.status === 511){
-          props.history.push('/auth')
+          push('/auth')
         }
       })
     }
@@ -54,10 +57,11 @@ const Cart = (props) => {
 
   return(
     <div>
-      <h1>Cart</h1>
+      <div className='cart'>Cart</div>
       {cart.map((item) => {
+        console.log(item)
         return(
-          <div className='purchase' key={item.item_cart_id}>
+          <div className='purchase' key={item.product_cart_id}>
             <h4>{item.item_name}</h4>
             <h5>Qty: {item.quantity}</h5>
             <button onClick={() => handleChangeQty(item.item_id,item.quantity - 1)}>-</button>
