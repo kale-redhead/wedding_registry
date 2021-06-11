@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
-import Cart from './Cart'
+import {Link} from 'react-router-dom'
 import './Registry.css'
 
 const Items = (props) => {
@@ -64,7 +64,7 @@ const Items = (props) => {
                     </div>
                 )
             })}
-            <Cart/>
+            <Link to='/cart' className='link'>View Cart</Link>
         </div>
     )
 }

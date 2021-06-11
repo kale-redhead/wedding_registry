@@ -16,7 +16,7 @@
     /* top: 4%; */
 }
 
-.purchase {
+/* .purchase {
     background-color: rgb(197, 191, 176);
     height: 100px;
     width: 100px;
@@ -24,8 +24,8 @@
     padding: 10px;
     margin: 5px;
     position: relative;
-    /* top: 200px; */
-}
+    top: 200px;
+} */
 
 .registry {
     font-family: 'abiggail';
@@ -36,12 +36,12 @@
     justify-content: space-around;
 }
 
-.cart {
+/* .cart {
     font-family: 'drugs';
     font-size: 30px;
     position: relative;
     top: 70%;
-}
+} */
 
 .item button{
     color: #550000;
@@ -49,8 +49,15 @@
     position:relative;
 }
 
-.purchase button{
+/* .purchase button{
     color: #550000;
     font-family: 'drugs';
     font-size: 80%;
+} */
+
+.link{
+    text-decoration: none;
+    color: #550000;
+    font-family: 'drugs';
+    font-size: 150%;
 }

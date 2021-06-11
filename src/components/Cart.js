@@ -2,9 +2,10 @@ import {useEffect} from 'react'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
-import { useHistory } from 'react-router-dom'
-import '../Checkout'
-import Checkout from '../Checkout'
+import { useHistory, Link } from 'react-router-dom'
+import './Checkout'
+import Checkout from './Checkout'
+import './cart.css'
 
 const Cart = (props) => {
   const {cart} = useSelector((store) => store.cartReducer)
@@ -58,7 +59,8 @@ const Cart = (props) => {
   }
 
   return(
-    <div>
+    <div className='container'>
+      <Link to='/items' className="link">Go Back to Registry</Link>
       <div className='cart'>Cart</div>
       {cart.map((item) => {
         console.log(item)

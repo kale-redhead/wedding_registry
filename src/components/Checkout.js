@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {loadStripe} from "@stripe/stripe-js"
-import items from './components/Items'
+import items from './Items'
 
 const stripePromise = loadStripe("pk_test_51J1BoTLh4HlLI7xDe93GSGAXRjoM2ucvWbQPE0iUbgRn0FyhaCVNe3irt38r7k4Z8ZsLrSQtfjGvvNDS1zfw7bze00aNMuGbSX");
 
@@ -12,10 +12,10 @@ const ProductDisplay = ({ handleClick }) => (
         <h3>{items.name}</h3>
         <h5>{items.price}</h5>
       </div>
-    </div>
-    <button type="button" id="checkout-button" role="link" onClick={handleClick}>
+      <button type="button" id="checkout-button" role="link" onClick={handleClick}>
       Checkout
     </button>
+    </div>
   </section>
 );
 

@@ -12,11 +12,11 @@
     color: white;
 }
 
-/* .kt {
+.kt {
     height: 100vh;
-    width: 28vw;
-    display:inline-block;
-} */
+    margin-left: 30%;
+    margin-top: 5%;
+}
 
 /* .photo {
     position: relative;

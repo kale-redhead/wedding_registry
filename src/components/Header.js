@@ -6,7 +6,7 @@ const Header = () => {
   return(
     <header>
       <div className='Header'>
-        <Link to='/' className='title'>Trevor and Kaley's Registry</Link>
+        <Link to='/' className='title'>The Registry</Link>
         <Auth/>
         {/* <Link to='/items'>Registry</Link> */}
       </div>
