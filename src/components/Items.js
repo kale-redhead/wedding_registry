@@ -56,8 +56,8 @@ const Items = (props) => {
             {items.map((item) => {
                 return(
                     <div className='item' key={item.item_id}>
-                        <h4>{item.item_name}</h4>
-                        <p>{item.item_price}</p>
+                        <div className='name'>{item.item_name}</div>
+                        <div className='price'>{item.item_price}</div>
                         {user && 
                         <button onClick={() => 
                         handleAddToCart(item.item_id)}>Add To Cart</button>}
