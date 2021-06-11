@@ -42,3 +42,16 @@
     position: relative;
     top: 70%;
 }
+
+.item button{
+    color: #550000;
+    font-family: 'drugs';
+    position:relative;
+    margin-bottom: 0%;
+}
+
+.purchase button{
+    color: #550000;
+    font-family: 'drugs';
+    font-size: 80%;
+}

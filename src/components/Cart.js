@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
 import { useHistory } from 'react-router-dom'
 import '../Checkout'
+import Checkout from '../Checkout'
 
 const Cart = (props) => {
   const {cart} = useSelector((store) => store.cartReducer)
@@ -71,6 +72,7 @@ const Cart = (props) => {
           </div>
         )
       })}
+      <Checkout/>
     </div>
   )
 }

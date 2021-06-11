@@ -7,7 +7,7 @@ const itemCtrl = require('./controllers/itemController')
 const cartCtrl = require('./controllers/cartController')
 const auth = require('./middleware/authMiddleware')
 // const { default: Items } = require('../src/components/Items')
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc')
+const stripe = require('stripe')('sk_test_51J1BoTLh4HlLI7xD4bLCceiNWp53F3iapCKTyRhoko46WyWdYKMvE0HPid88yEcDaSVmQ9sHuB15kU3WJZ21Dgl300h2dIjWI1')
 
 const app = express()
 app.use(express.static('.'))

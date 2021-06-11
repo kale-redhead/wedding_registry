@@ -57,7 +57,7 @@ const Items = (props) => {
                 return(
                     <div className='item' key={item.item_id}>
                         <h4>{item.item_name}</h4>
-                        <p>{item.item_description}</p>
+                        <p>{item.item_price}</p>
                         {user && 
                         <button onClick={() => 
                         handleAddToCart(item.item_id)}>Add To Cart</button>}

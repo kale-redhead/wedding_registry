@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {loadStripe} from "@stripe/stripe-js"
 import items from './components/Items'
 
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe("pk_test_51J1BoTLh4HlLI7xDe93GSGAXRjoM2ucvWbQPE0iUbgRn0FyhaCVNe3irt38r7k4Z8ZsLrSQtfjGvvNDS1zfw7bze00aNMuGbSX");
 
 const ProductDisplay = ({ handleClick }) => (
   <section>
