@@ -24,7 +24,7 @@ module.exports = {
         const {email, password} = req.body
         const [user] = await db.auth.check_emails(email)
         if(!user){
-            return res.status(401).send("User Not Found.")
+            return res.status(405).send("User Not Found.")
         }
 
         const isAuthenticated = bcrypt.compareSync(password, user.password)
@@ -48,7 +48,7 @@ module.exports = {
         const db = req.app.get('db')
         const {user} = req.session
         if(!user){
-            return req.status(511).send('User not logged in.')
+            return res.status(511).send('User not logged in.')
         }
 
         db.cart.get_cart_items(user.cart_id)
