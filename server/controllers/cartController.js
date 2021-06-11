@@ -23,7 +23,7 @@ module.exports = {
         const {quantity} = req.body
 
         if(!user){
-            return req.status(511).send('User not logged in.')
+            return res.status(511).send('User not logged in.')
         }
 
         db.cart.add_to_cart(user.cart_id, item_id)
@@ -43,7 +43,7 @@ module.exports = {
         const {quantity} = req.body
 
         if(!user){
-            return req.status(511).send('User not logged in.')
+            return res.status(511).send('User not logged in.')
         }
 
         db.cart.delete_item(user.cart_id, item_id)
@@ -63,7 +63,7 @@ module.exports = {
         const {quantity} = req.body
 
         if(!user){
-            return req.status(511).send('User not logged in.')
+            return res.status(511).send('User not logged in.')
         }
 
         db.cart.change_cart_qty(user.cart_id, item_id, quantity)

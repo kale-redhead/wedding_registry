@@ -8,10 +8,6 @@ const ProductDisplay = ({ handleClick }) => (
   <section>
       
     <div className="product">
-      <img
-        src="{items.image}"
-        alt="Registry Item"
-      />
       <div className="description">
         <h3>{items.name}</h3>
         <h5>{items.price}</h5>
