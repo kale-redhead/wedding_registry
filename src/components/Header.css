@@ -25,5 +25,31 @@
 }
 
 .auth {
-    right: 50%;
+    /* background-color: lightcoral; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+@media (max-width: 1100px){
+    .title{
+        font-size: 45px;
+    }
+
+    .auth{
+        display: flex;
+        position:relative;
+    }
+}
+
+@media (max-width: 1000px){
+    .title{
+        font-size: 30px;
+    }
+
+    .auth{
+        display: flex;
+        position:relative;
+    }
 }

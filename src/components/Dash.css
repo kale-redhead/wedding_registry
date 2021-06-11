@@ -24,7 +24,7 @@
     color: white;
   } */
 
-.text {
+/* .text {
     color: #720505;
     text-shadow: 3px 3px 4px #550000;
     font-family: 'abiggail';
@@ -33,25 +33,28 @@
     top: 80%;
     left:475px;
     transform: translate(-30%, -30%);
-}
+} */
 
 .text1 {
+    /* background-color: black; */
+    width: 50%;
     color: rgb(233, 227, 214);
     text-shadow: 3px 3px 2px rgb(41, 40, 39);;
     font-family: 'drugs';
-    font-size: 20px;
+    font-size: 200%;
     letter-spacing: 6px;
     position: absolute;
-    top: 90%;
-    left:600px;
-    transform: translate(-40%, -40%);
+    top: 80%;
+    left:50%;
+    transform: translate(-50%, -50%);
 }
 
 .info {
     /* left: 45%; */
     transform: translate(-40%, -40%);
-    position: static;
+    position: relative;
     text-align: center;
+    justify-content: space-evenly;
     display: inline;
     width: 100%;
     background-color: rgb(233, 227, 214);
@@ -63,69 +66,62 @@
     text-shadow: 3px 3px 4px #550000;
 }
 
-.bride{
-    display: inline-block;
-    position: relative;
-    left: 25%;
+@media (max-width: 1200px){
+    .text1{
+        top:75%;
+    }
+}
+@media (max-width: 1100px){
+    .text1{
+        top:70%;
+    }
+}
+@media (max-width: 1000px){
+    .text1{
+        top:60%;
+    }
+    .header{
+        font-size: 85px;
+    }
+}
+@media (max-width: 800px){
+    .text1{
+        top:55%;
+    }
+    .header{
+        font-size: 80px;
+    }
+}
+@media (max-width: 750px){
+    .text1{
+        top:50%;
+        font-size: 175%;
+    }
+    .header{
+        font-size: 75px;
+    }
+}
+@media (max-width: 675px){
+    .text1{
+        top:50%;
+        font-size: 150%;
+    }
+    .header{
+        font-size: 70px;
+    }
+}
+@media (max-width: 600px){
+    .text1{
+        /* font-size: 20px; */
+        top:45%;
+    }
+    .header{
+        font-size: 60px;
+    }
 }
 
-.groom{
-    display: inline-block;
-    position: relative;
-    left: 35%;
+@media (max-width: 500px) {
+    .text1{
+        top: 40%;
+    }
 }
-
-.moh{
-    display: inline-block;
-    position:relative;
-    top: 400px;
-    right: 25%;
-}
-
-.best-man{
-    display: inline-block;
-    position:relative;
-    top: 400px;
-    right: 35%;
-}
-
-.bm{
-    display: inline-block;
-    position:relative;
-    top: 400px;
-    left: 35%;
-}
-
-.gm{
-    display: inline-block;
-    position:relative;
-    top: 400px;
-    left: 35%;
-}
-
-.bm2{
-    display: inline-block;
-    position:relative;
-    top: 800px;
-}
-
-.gm2{
-    display: inline-block;
-    position:relative;
-    top: 800px;
-}
-
-.bm3{
-    display: inline-block;
-    position:relative;
-    top: 1200px;
-    right: 40%;
-}
-
-.gm3{
-    display: inline-block;
-    position:relative;
-    top: 800px;
-    left: 50%;
-}
-

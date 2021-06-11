@@ -8,10 +8,10 @@ const Dash = () => {
             <div className='photo'>
                 <img src={image} alt='tk' className='tk'/>
                 {/* <img src className='kt' src={image2}/> */}
-                <div className='text'>Trevor Ruta & Kaley Forster</div>
+                {/* <div className='text'>Trevor Ruta & Kaley Forster</div> */}
                 <div className='text1'>We can't wait to share our special day with you.</div>
             </div>
-            <div className='info'>
+            {/* <div className='info'>
                 <div className='header'>The Wedding Party</div>
                 <div className='bride'>
                     <img src='https://scontent-iad3-2.xx.fbcdn.net/v/t1.6435-9/89654410_2723347271078074_3336542105492258816_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=174925&_nc_ohc=x__3-1QADEoAX8c6ouL&_nc_ht=scontent-iad3-2.xx&oh=a6af69f120940347a76dbecf241b8d22&oe=60E46803' height='300'/>
@@ -63,7 +63,7 @@ const Dash = () => {
                     <h4>Groomsmen</h4>
                     <h6>Joey Forster</h6>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
