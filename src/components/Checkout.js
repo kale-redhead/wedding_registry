@@ -1,12 +1,15 @@
+
 import React, {useState, useEffect} from 'react'
 import {loadStripe} from "@stripe/stripe-js"
 import items from './Items'
+import axios from 'axios';
 
-const stripePromise = loadStripe("pk_test_51J1BoTLh4HlLI7xDe93GSGAXRjoM2ucvWbQPE0iUbgRn0FyhaCVNe3irt38r7k4Z8ZsLrSQtfjGvvNDS1zfw7bze00aNMuGbSX");
+// const{STRIPE_PK} = process.env
+// console.log(STRIPE_PK)
+const stripePromise = loadStripe('pk_test_51J1BoTLh4HlLI7xDe93GSGAXRjoM2ucvWbQPE0iUbgRn0FyhaCVNe3irt38r7k4Z8ZsLrSQtfjGvvNDS1zfw7bze00aNMuGbSX');
 
 const ProductDisplay = ({ handleClick }) => (
   <section>
-      
     <div className="product">
       <div className="description">
         <h3>{items.name}</h3>
@@ -25,7 +28,8 @@ const Message = ({ message }) => (
   </section>
 );
 
-export default function Checkout() {
+export default function Checkout(props) {
+  const {cart} = props
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -46,15 +50,14 @@ export default function Checkout() {
   const handleClick = async (event) => {
     const stripe = await stripePromise;
 
-    const response = await fetch("/create-checkout-session", {
-      method: "POST",
-    });
+    const session = await axios.post("/create-checkout-session", {cart});
 
-    const session = await response.json();
+    // const session = await response.json();
+    console.log(session)
 
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
+      sessionId: session.data.id,
     });
 
     if (result.error) {
@@ -64,9 +67,7 @@ export default function Checkout() {
     }
   };
 
-  return message ? (
-    <Message message={message} />
-  ) : (
+  return(
     <ProductDisplay handleClick={handleClick} />
   );
 }

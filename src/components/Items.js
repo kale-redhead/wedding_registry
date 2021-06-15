@@ -50,14 +50,15 @@ const Items = (props) => {
     }
 
 
+    console.log(items)
     return(
         <div className='container'>
             <div className='registry'>Registry</div>
             {items.map((item) => {
                 return(
                     <div className='item' key={item.item_id}>
-                        <div className='name'>{item.item_name}</div>
-                        <div className='price'>{item.item_price}</div>
+                        <div className='name'>{item.name}</div>
+                        <div className='price'>{item.price}</div>
                         {user && 
                         <button onClick={() => 
                         handleAddToCart(item.item_id)}>Add To Cart</button>}

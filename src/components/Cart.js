@@ -74,7 +74,7 @@ const Cart = (props) => {
           </div>
         )
       })}
-      <Checkout/>
+      <Checkout cart={cart} />
     </div>
   )
 }

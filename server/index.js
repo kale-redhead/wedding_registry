@@ -7,12 +7,12 @@ const itemCtrl = require('./controllers/itemController')
 const cartCtrl = require('./controllers/cartController')
 const auth = require('./middleware/authMiddleware')
 // const { default: Items } = require('../src/components/Items')
-const stripe = require('stripe')('sk_test_51J1BoTLh4HlLI7xD4bLCceiNWp53F3iapCKTyRhoko46WyWdYKMvE0HPid88yEcDaSVmQ9sHuB15kU3WJZ21Dgl300h2dIjWI1')
 
 const app = express()
 app.use(express.static('.'))
-const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT} = process.env
+const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, STRIPE_SK} = process.env
 const YOUR_DOMAIN = 'http://localhost:3000/checkout';
+const stripe = require('stripe')(STRIPE_SK)
 
 //TOP LEVEL MIDDLEWARE
 app.use(express.json())
@@ -53,25 +53,31 @@ app.post('/api/cart/user', auth.usersOnly, cartCtrl.addToCart);
 app.get('/api/cart/all', auth.usersOnly, auth.adminsOnly, cartCtrl.getAllItems);
 
 app.post('/create-checkout-session', async (req, res) => {
+    const {cart} = req.body
+
+    const stLineItems = cart.map(item => {
+      return {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: item.name,
+          },
+          unit_amount: item.price * 100,
+        },
+        quantity: item.quantity,
+      }
+    })
+    console.log('line 70 index.js', stLineItems)
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: items.name,
-            },
-            unit_amount: items.price,
-          },
-          quantity: item_cart_junction.quantity,
-        },
-      ],
+      line_items: stLineItems,
       mode: 'payment',
       success_url: `${YOUR_DOMAIN}?success=true`,
       cancel_url: `${YOUR_DOMAIN}?canceled=true`,
     });
-    res.json({ id: session.id });
+    console.log(session.id)
+    res.status(200).send({ id: session.id })
   });
 
 
